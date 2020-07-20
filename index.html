@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Mesto</title>
+	<link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+	<!-- Начало блока header -->
+	<header class="header">
+		<img src="./images/logo.svg" alt="Место - Россия" class="logo">
+	</header>
+	<!-- Конец блока header -->
+
+	<!-- Начало блока main -->
+	<main class="main">
+	<!-- Начало блока profile -->
+	<section class="profile">
+		<img src="./images/Avatar.jpg" alt="Аватарка" class="avatar">
+		<div class="profile__info">
+			<div class="profile__wrapper">
+				<h1 class="profile__name">Прокопьев Дмитрий</h1>
+				<button class="profile__button-edit"></button>
+			</div>
+			<h3 class="profile__profession">Временно безработный</h3>
+		</div>
+		<button class="profile__button-add"></button>
+	</section>
+	<!-- Конец блока profile -->
+
+	<!-- Начало блока elements -->
+	<section class="elements">
+		<article class="element">
+			<img src="./images/photo-grid-Ekaterinburg.jpg" alt="Город на закате" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Екатеринбург</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+		<article class="element">
+			<img src="./images/photo-grid-Kamensk-Uralskiy.jpg" alt="Река - Исеть; Город - Каменск-Уральский" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Каменск-Уральский</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+		<article class="element">
+			<img src="./images/photo-grid-cat-traveler.jpg" alt="Кот на фоне реки" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Деревня Новый Быт</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+		<article class="element">
+			<img src="./images/photo-grid-bridge.jpg" alt="Старый деревянный мост" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Каменск-Уральский</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+		<article class="element">
+			<img src="./images/photo-grid-lake.jpg" alt="Водохранилище" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Водохранилище</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+		<article class="element">
+			<img src="./images/photo-grid-river.jpg" alt="Река" class="element__photo">
+			<div class="element__info">
+				<h2 class="element__place">Река</h2>
+				<button class="element__button-like"></button>
+			</div>
+		</article>
+	</section>
+	<!-- Конец блока elements -->
+	</main>
+	<!-- Конец блока main -->
+
+		<!-- Начало блока footer -->
+		<footer class="footer">
+			<h3 class="footer__copyright">
+				&copy; 2020 Дмитрий Прокопьев
+			</h3>
+		</footer>
+		<!-- Конец блока elements -->
+
+	<!-- Начало блока popup -->
+	<div class="popup">
+		<div class="popup__container">
+			<form action="" class="popup__form">
+				<button type="button" class="popup__button-close">
+					<img class="popup__image-close" src="images/close.svg" alt="Закрыть">
+				</button>
+				<h2 class="popup__title">Редактировать профиль</h2>
+				<input type="text" class="popup__input popup__input_name">
+				<input type="text" class="popup__input popup__input_profession">
+				<button type="submit" class="popup__button-save">Сохранить</button>
+			</form>
+		</div>
+	</div>
+	<!-- Конец блока popup -->
+	<script src="./scripts/script.js"></script>
+</body>
+</html>
