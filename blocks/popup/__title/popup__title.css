@@ -6,4 +6,14 @@
 	font-size: 24px;
 	line-height: 29px;
 	color: black;
+	align-self: flex-start;
+}
+
+@media screen and (max-width: 425px) {
+	.popup__title {
+		align-self: none;
+		text-align: center;
+		font-size: 28px;
+		line-height: 32px;
+	}
 }
