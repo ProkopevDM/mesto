@@ -12,3 +12,8 @@
 	outline: none;
 	padding: 0;
 }
+
+.element__button-like:hover {
+	opacity: .6;
+	transition: opacity .16s linear;
+}

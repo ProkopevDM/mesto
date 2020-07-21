@@ -4,14 +4,16 @@ let editButton = profile.querySelector('.profile__button-edit');
 let closeButton = popup.querySelector('.popup__button-close');
 let name = profile.querySelector('.profile__name');
 let profession = profile.querySelector('.profile__profession');
-let inputName = popup.querySelector('.popup__input_name');
-let inputProfession = popup.querySelector('.popup__input_profession');
+let inputName = popup.querySelector('.popup__input_field_name');
+let inputProfession = popup.querySelector('.popup__input_field_profession');
 let formElement = popup.querySelector('.popup__form');
 
 function editProfile() {
 	popup.classList.toggle('popup_opened');
-	inputName.value = name.textContent;
-	inputProfession.value = profession.textContent;
+	if (popup.classList.contains('popup_opened')) {
+		inputName.value = name.textContent;
+		inputProfession.value = profession.textContent;
+	}
 }
 
 function formSubmitHandler (evt) {

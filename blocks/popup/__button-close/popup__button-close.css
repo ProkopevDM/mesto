@@ -5,11 +5,10 @@
 	width: 40px;
 	height: 40px;
 	background: transparent;
+	background-image: url(../../../images/close.svg);
+	background-position: center;
 	border: none;
 	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	outline: none;
 }
 
