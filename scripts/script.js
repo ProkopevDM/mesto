@@ -150,5 +150,3 @@ addElementCloseButton.addEventListener('click', () => {togglePopup(popupAddEleme
 
 //Отслеживание действий с третьим popup
 photoFullscreenCloseButton.addEventListener('click', () => {togglePopup(popupPhotoFullscreen)});
-
-//Уважаемый ревьюер, оцените пожалуйста, насколько вообще применим такой код, что можно было бы добавить или убрать? Просто интересно, применим ли такой код в реальном проекте?
