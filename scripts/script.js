@@ -11,17 +11,17 @@ const elementsTemplate = document.querySelector('.element-template').content;
 
 //Определяем нужные элементы для попапа редактировани профиля
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
-const editProfilecloseButton = popupEditProfile.querySelector('.popup__button-close');
-const editformElement = popupEditProfile.querySelector('.popup__form');
-const inputName = editformElement.querySelector('.popup__input_field_name');
-const inputProfession = editformElement.querySelector('.popup__input_field_profession');
+const editProfileCloseButton = popupEditProfile.querySelector('.popup__button-close');
+const editFormElement = popupEditProfile.querySelector('.popup__form');
+const inputName = editFormElement.querySelector('.popup__input_field_name');
+const inputProfession = editFormElement.querySelector('.popup__input_field_profession');
 
 //Определяем нужные элементы для попапа добавления элеманта
 const popupAddElement = document.querySelector('.popup_type_add-element');
 const addElementCloseButton = popupAddElement.querySelector('.popup__button-close');
-const addformElement = popupAddElement.querySelector('.popup__form');
-const inputPlace = addformElement.querySelector('.popup__input_type_place');
-const inputUrl = addformElement.querySelector('.popup__input_type_url');
+const addFormElement = popupAddElement.querySelector('.popup__form');
+const inputPlace = addFormElement.querySelector('.popup__input_type_place');
+const inputUrl = addFormElement.querySelector('.popup__input_type_url');
 
 //Определяем нужные элементы для попапа увеличения картинки
 const popupPhotoFullscreen = document.querySelector('.popup_type_photo-fullscreen');
@@ -58,20 +58,20 @@ const initialCards = [
 ];
 
 //Открываем или закрываем popup. popupOpen - это аргумент функции, который передает какой именно popup нужно открыть или закрыть
-function openPopup(popupOpen) {
+function togglePopup(popupOpen) {
 	popupOpen.classList.toggle('popup_opened');
 }
 
-//Эта функция задаёт значения полей при закрытии popup на крестик
-function inputStandardValue(popupOpen) {
-	openPopup(popupOpen);
-	if (popupOpen === popupEditProfile && popupOpen.classList.contains('popup_opened')) {
-		inputName.value = profileName.textContent;
-		inputProfession.value = profession.textContent;
-	} else if (popupOpen === popupAddElement && popupOpen.classList.contains('popup_opened')) {
-			inputPlace.value = '';
-			inputUrl.value = '';
-	}
+//Эта функция задаёт значения полей при открытии popup
+function profileInputStandardValue() {
+	inputName.value = profileName.textContent;
+	inputProfession.value = profession.textContent;
+	togglePopup(popupEditProfile);
+}
+function addElementInputStandardValue() {
+	inputPlace.value = '';
+	inputUrl.value = '';
+	togglePopup(popupAddElement);
 }
 
 //Эта функция заполняет элемент и возвращает его в функцию renderElements, которая добавит элемент на страницу
@@ -117,17 +117,17 @@ function elementDelete(evt) {
 
 //Эта функция отправляет значения при submit первого и второго popup
 //Первый popup
-function formSubmitHandler (evt) {
+function profileFormSubmitHandler (evt) {
 	evt.preventDefault();
 	profileName.textContent = inputName.value;
 	profession.textContent = inputProfession.value;
-	inputStandardValue(popupEditProfile);
+	togglePopup(popupEditProfile);
 }
 //Второй popup
 function addElement (evt) {
 	evt.preventDefault();
 	renderElements({name:inputPlace.value, link:inputUrl.value})
-	inputStandardValue(popupAddElement);
+	togglePopup(popupAddElement);
 }
 
 //Функция открытия третьего popup
@@ -135,18 +135,20 @@ function openPhoto(data) {
 	openPopupPhotoFullscreen.src = data.link;
 	openPopupPhotoFullscreen.alt = data.name;
 	photoFullscreenTitle.textContent = data.name;
-	openPopup(popupPhotoFullscreen);
+	togglePopup(popupPhotoFullscreen);
 }
 
 //Отслеживание действий с первым popup
-editButton.addEventListener('click', () => {inputStandardValue(popupEditProfile)});
-editformElement.addEventListener('submit', formSubmitHandler);
-editProfilecloseButton.addEventListener('click', () => {openPopup(popupEditProfile)});
+editButton.addEventListener('click', profileInputStandardValue);
+editFormElement.addEventListener('submit', profileFormSubmitHandler);
+editProfileCloseButton.addEventListener('click', () => {togglePopup(popupEditProfile)});
 
 //Отслеживание действий с вторым popup
-addButton.addEventListener('click', () => {inputStandardValue(popupAddElement)});
-addformElement.addEventListener('submit', addElement);
-addElementCloseButton.addEventListener('click', () => {openPopup(popupAddElement)});
+addButton.addEventListener('click', () => {addElementInputStandardValue(popupAddElement)});
+addFormElement.addEventListener('submit', addElement);
+addElementCloseButton.addEventListener('click', () => {togglePopup(popupAddElement)});
 
 //Отслеживание действий с третьим popup
-photoFullscreenCloseButton.addEventListener('click', () => {openPopup(popupPhotoFullscreen)});
+photoFullscreenCloseButton.addEventListener('click', () => {togglePopup(popupPhotoFullscreen)});
+
+//Уважаемый ревьюер, оцените пожалуйста, насколько вообще применим такой код, что можно было бы добавить или убрать? Просто интересно, применим ли такой код в реальном проекте?
