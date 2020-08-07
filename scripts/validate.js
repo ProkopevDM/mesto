@@ -23,8 +23,6 @@ const hideInputError = (formElement, inputElement, object) => {
 	errorElement.textContent = '';
 };
 
-//
-
 //Проверяет валидность инпутов, получает ошибку инпута, запускает фунции показать/скрыть span с ошибкой
 const checkInputValidity = (formElement, inputElement) => {
 	if(!inputElement.validity.valid) {

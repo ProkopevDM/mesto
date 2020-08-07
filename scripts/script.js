@@ -33,7 +33,7 @@ const photoFullscreenCloseButton = popupPhotoFullscreen.querySelector('.popup__b
 //Открываем или закрываем popup. popupOpen - это аргумент функции, который передает какой именно popup нужно открыть или закрыть
 function togglePopup(popupOpen) {
 	popupOpen.classList.toggle('popup_opened');
-	enableValidation(object)
+	enableValidation(object);
 //Закрытие popup по кнопке esc
 	document.addEventListener('keydown', function closePopup(evt) {
 		if (evt.key === 'Escape') { 
@@ -114,7 +114,7 @@ function profileFormSubmitHandler (evt) {
 //Второй popup
 function addElement (evt) {
 	evt.preventDefault();
-	renderElements({name:inputPlace.value, link:inputUrl.value})
+	renderElements({name:inputPlace.value, link:inputUrl.value});
 	togglePopup(popupAddElement);
 }
 
