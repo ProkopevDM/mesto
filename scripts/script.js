@@ -29,37 +29,25 @@ const openPopupPhotoFullscreen = popupPhotoFullscreen.querySelector('.popup__pho
 const photoFullscreenTitle = popupPhotoFullscreen.querySelector('.popup__photo-fullscreen-title');
 const photoFullscreenCloseButton = popupPhotoFullscreen.querySelector('.popup__button-close');
 
-//Добавляем стандартные элементы
-const initialCards = [
-	{
-		name: 'Екатеринбург',
-		link: './images/photo-grid-Ekaterinburg.jpg'
-	},
-	{
-		name: 'Каменск-Уральский',
-		link: './images/photo-grid-Kamensk-Uralskiy.jpg'
-	},
-	{
-		name: 'Деревня Новый Быт',
-		link: './images/photo-grid-cat-traveler.jpg'
-	},
-	{
-		name: 'Каменск-Уральский',
-		link: './images/photo-grid-bridge.jpg'
-	},
-	{
-		name: 'Водохранилище',
-		link: './images/photo-grid-lake.jpg'
-	},
-	{
-		name: 'Река',
-		link: './images/photo-grid-river.jpg'
-	}
-];
-
+//Запускает валидацию при открытии popup
 //Открываем или закрываем popup. popupOpen - это аргумент функции, который передает какой именно popup нужно открыть или закрыть
 function togglePopup(popupOpen) {
 	popupOpen.classList.toggle('popup_opened');
+	enableValidation(object)
+//Закрытие popup по кнопке esc
+	document.addEventListener('keydown', function closePopup(evt) {
+		if (evt.key === 'Escape') { 
+			popupOpen.classList.remove('popup_opened');
+			document.removeEventListener('keydown', closePopup);
+		}
+	});
+//Закрытие popup по клику
+	document.addEventListener('mousedown', function closePopup(evt) {
+		if (evt.target.classList.contains('popup')) { 
+			popupOpen.classList.remove('popup_opened');
+			document.removeEventListener('mousedown', closePopup);
+		}
+	});
 }
 
 //Эта функция задаёт значения полей при открытии popup
