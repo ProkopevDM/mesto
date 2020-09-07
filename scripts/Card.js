@@ -1,28 +1,4 @@
-import {
-	profile,
-	editButton,
-	profileName,
-	profession,
-	addButton,
-	elements,
-	elementsTemplate,
-	popupEditProfile,
-	editProfileCloseButton,
-	editFormElement,
-	inputName,
-	inputProfession,
-	popupAddElement,
-	addElementCloseButton,
-	addFormElement,
-	inputPlace,
-	inputUrl,
-	popupPhotoFullscreen,
-	openPopupPhotoFullscreen,
-	photoFullscreenTitle,
-	photoFullscreenCloseButton,
-	initialCards,
-	object
-} from './constants.js';
+import {popupPhotoFullscreen, openPopupPhotoFullscreen, photoFullscreenTitle} from './constants.js';
 import {togglePopup} from './index.js'
 
 export class Card {
