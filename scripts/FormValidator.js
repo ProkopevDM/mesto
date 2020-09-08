@@ -65,4 +65,11 @@ export class FormValidator {
 		});
 		this._setEventListeners();
 	};
+
+	errorReset() {
+		const errorInput = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+		errorInput.forEach((errorInputElement) => {
+			this._hideInputError(errorInputElement);
+		});
+	};
 }

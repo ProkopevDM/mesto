@@ -11,6 +11,7 @@ const elementsTemplate = document.querySelector('.element-template').content;
 
 //Определяем нужные элементы для попапа редактировани профиля
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
+const saveButton = popupEditProfile.querySelector('.popup__form-button_type_save');
 const editProfileCloseButton = popupEditProfile.querySelector('.popup__button-close');
 const editFormElement = popupEditProfile.querySelector('.popup__form');
 const inputName = editFormElement.querySelector('.popup__input_field_name');
@@ -18,6 +19,7 @@ const inputProfession = editFormElement.querySelector('.popup__input_field_profe
 
 //Определяем нужные элементы для попапа добавления элеманта
 const popupAddElement = document.querySelector('.popup_type_add-element');
+const createButton = popupAddElement.querySelector('.popup__form-button_type_create');
 const addElementCloseButton = popupAddElement.querySelector('.popup__button-close');
 const addFormElement = popupAddElement.querySelector('.popup__form');
 const inputPlace = addFormElement.querySelector('.popup__input_type_place');
@@ -87,5 +89,7 @@ export {
 	photoFullscreenTitle,
 	photoFullscreenCloseButton,
 	initialCards,
-	object
+	object,
+	createButton,
+	saveButton
 }

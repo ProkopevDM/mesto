@@ -21,7 +21,9 @@ import {
 	photoFullscreenTitle,
 	photoFullscreenCloseButton,
 	initialCards,
-	object
+	object,
+	createButton,
+	saveButton
 } from './constants.js';
 import {togglePopup} from './utils.js';
 import {Card} from './Card.js';
@@ -30,6 +32,12 @@ import {FormValidator} from './FormValidator.js';
 initialCards.forEach(data => {
 	renderElements(data);
 });
+
+const addFormValidator = new FormValidator(object, popupAddElement);
+const editFormValidator = new FormValidator(object, popupEditProfile);
+addFormValidator.enableValidation();
+editFormValidator.enableValidation();
+
 
 function renderElements (data) {
 	const card = new Card(data, '.element-template');
@@ -50,29 +58,31 @@ function addElement (evt) {
 	togglePopup(popupAddElement);
 }
 
-function profileInputStandardValue() {
+function profileStandardState() {
 	inputName.value = profileName.textContent;
 	inputProfession.value = profession.textContent;
-	const editFormValidator = new FormValidator(object, popupEditProfile);
-	editFormValidator.enableValidation();
+	saveButton.classList.remove('popup__form-button_disabled');
+	saveButton.disabled = false;
+	editFormValidator.errorReset();
 	togglePopup(popupEditProfile);
 }
 
-function addElementInputStandardValue() {
+function addElementStandardState() {
 	addFormElement.reset();
-	const addFormValidator = new FormValidator(object, popupAddElement);
-	addFormValidator.enableValidation();
+	createButton.classList.add('popup__form-button_disabled');
+	createButton.disabled = true;
+	addFormValidator.errorReset();
 	togglePopup(popupAddElement);
 }
 
 //Отслеживание действий с первым popup
-editButton.addEventListener('click', profileInputStandardValue);
+editButton.addEventListener('click', profileStandardState);
 editFormElement.addEventListener('submit', profileFormSubmitHandler);
 editProfileCloseButton.addEventListener('click', () => {togglePopup(popupEditProfile)});
 
 //Отслеживание действий с вторым popup
-addButton.addEventListener('click', () => {addElementInputStandardValue()});
-addFormElement.addEventListener('submit', addElement);
+addButton.addEventListener('click', addElementStandardState);
+addFormElement.addEventListener('submit', addElement,);
 addElementCloseButton.addEventListener('click', () => {togglePopup(popupAddElement)});
 
 //Отслеживание действий с третьим popup
