@@ -1,29 +1,4 @@
-import {
-	profile,
-	editButton,
-	profileName,
-	profession,
-	addButton,
-	elements,
-	elementsTemplate,
-	popupEditProfile,
-	editProfileCloseButton,
-	editFormElement,
-	inputName,
-	inputProfession,
-	popupAddElement,
-	addElementCloseButton,
-	addFormElement,
-	inputPlace,
-	inputUrl,
-	popupPhotoFullscreen,
-	openPopupPhotoFullscreen,
-	photoFullscreenTitle,
-	photoFullscreenCloseButton,
-	initialCards,
-	object
-} from './constants.js';
-import {togglePopup} from './index.js'
+import {popupPhotoFullscreen, openPopupPhotoFullscreen, photoFullscreenTitle, togglePopup} from './utils.js';
 
 export class Card {
 	constructor (data, cardSelector) {
@@ -34,6 +9,7 @@ export class Card {
 
 	_getTemplate() {
 		const cardElement = document.querySelector(this._cardSelector).content.querySelector('.element').cloneNode(true);
+
 		return cardElement;
 	}
 
@@ -41,14 +17,18 @@ export class Card {
 		this._element = this._getTemplate();
 		this._setEventListeners();
 
-		this._element.querySelector('.element__photo').src = this._link;
-		this._element.querySelector('.element__photo').alt = this._text;
-		this._element.querySelector('.element__place').textContent = this._text;
+		const elementPhoto = this._element.querySelector('.element__photo');
+		const elementPlace = this._element.querySelector('.element__place');
+
+		elementPhoto.src = this._link;
+		elementPhoto.alt = this._text;
+		elementPlace.textContent = this._text;
+
 		return this._element;
 	};
 
 	_setEventListeners() {
-		this._element.querySelector('.element__button-delete').addEventListener('click', () => {this._elementDelete()});;
+		this._element.querySelector('.element__button-delete').addEventListener('click', () => {this._elementDelete()});
 		this._element.querySelector('.element__photo').addEventListener('click', () => {this._openPhoto()});
 		this._element.querySelector('.element__button-like').addEventListener('click', () => {this._elementLike()});
 	};

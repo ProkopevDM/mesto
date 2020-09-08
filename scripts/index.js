@@ -23,6 +23,7 @@ import {
 	initialCards,
 	object
 } from './constants.js';
+import {togglePopup} from './utils.js';
 import {Card} from './Card.js';
 import {FormValidator} from './FormValidator.js';
 
@@ -35,23 +36,6 @@ function renderElements (data) {
 	const cardElement = card.generateCard();
 	elements.prepend(cardElement);
 }
-
-export function togglePopup(popupOpen) {
-	popupOpen.classList.toggle('popup_opened');
-	document.addEventListener('keydown', function closePopup(evt) {
-		if (evt.key === 'Escape') { 
-			popupOpen.classList.remove('popup_opened');
-			document.removeEventListener('keydown', closePopup);
-		}
-	});
-
-	document.addEventListener('mousedown', function closePopup(evt) {
-		if (evt.target.classList.contains('popup')) { 
-			popupOpen.classList.remove('popup_opened');
-			document.removeEventListener('mousedown', closePopup);
-		}
-	});
-};
 
 function profileFormSubmitHandler (evt) {
 	evt.preventDefault();
@@ -69,20 +53,17 @@ function addElement (evt) {
 function profileInputStandardValue() {
 	inputName.value = profileName.textContent;
 	inputProfession.value = profession.textContent;
+	const editFormValidator = new FormValidator(object, popupEditProfile);
+	editFormValidator.enableValidation();
 	togglePopup(popupEditProfile);
 }
 
 function addElementInputStandardValue() {
-	inputPlace.value = '';
-	inputUrl.value = '';
+	addFormElement.reset();
+	const addFormValidator = new FormValidator(object, popupAddElement);
+	addFormValidator.enableValidation();
 	togglePopup(popupAddElement);
 }
-
-const editFormValidator = new FormValidator(object, popupEditProfile);
-const addFormValidator = new FormValidator(object, popupAddElement);
-
-editFormValidator.enableValidation();
-addFormValidator.enableValidation();
 
 //Отслеживание действий с первым popup
 editButton.addEventListener('click', profileInputStandardValue);
