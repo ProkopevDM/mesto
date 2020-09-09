@@ -61,16 +61,14 @@ function addElement (evt) {
 function profileStandardState() {
 	inputName.value = profileName.textContent;
 	inputProfession.value = profession.textContent;
-	saveButton.classList.remove('popup__form-button_disabled');
-	saveButton.disabled = false;
+	editFormValidator.buttonStateActive(saveButton);
 	editFormValidator.errorReset();
 	togglePopup(popupEditProfile);
 }
 
 function addElementStandardState() {
 	addFormElement.reset();
-	createButton.classList.add('popup__form-button_disabled');
-	createButton.disabled = true;
+	addFormValidator.buttonStateDisabled(createButton);
 	addFormValidator.errorReset();
 	togglePopup(popupAddElement);
 }

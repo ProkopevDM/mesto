@@ -39,13 +39,21 @@ export class FormValidator {
 
 	_toggleButtonState(inputList, buttonElement) {
 		if (this._hasInvalidInput(inputList)) {
-			buttonElement.classList.add(this._inactiveButtonClass);
-			buttonElement.disabled = true;
+			this.buttonStateDisabled(buttonElement);
 		} else {
-			buttonElement.classList.remove(this._inactiveButtonClass);
-			buttonElement.disabled = false;
+			this.buttonStateActive(buttonElement);
 		}
 	};
+
+	buttonStateActive(buttonElement) {
+		buttonElement.classList.remove(this._inactiveButtonClass);
+		buttonElement.disabled = false;
+	}
+
+	buttonStateDisabled(buttonElement) {
+		buttonElement.classList.add(this._inactiveButtonClass);
+		buttonElement.disabled = true;
+	}
 
 	_setEventListeners() {
 		const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
