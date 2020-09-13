@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
 	constructor (object, formElement) {
 		this._formElement = formElement;
 		this._formSelector = object.formSelector,
@@ -48,12 +48,12 @@ export class FormValidator {
 	buttonStateActive(buttonElement) {
 		buttonElement.classList.remove(this._inactiveButtonClass);
 		buttonElement.disabled = false;
-	}
+	};
 
 	buttonStateDisabled(buttonElement) {
 		buttonElement.classList.add(this._inactiveButtonClass);
 		buttonElement.disabled = true;
-	}
+	};
 
 	_setEventListeners() {
 		const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
