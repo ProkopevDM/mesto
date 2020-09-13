@@ -19,15 +19,41 @@ module.exports = {
     	},
     	{
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader, 
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            }
+          },
+          'postcss-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|woff|woff2|svg)$/i,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: './images'
+            }
           },
         ],
+      },
+      {
+        test: /\.(woff|woff2)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: './fonts'
+            }
+          },
+        ],
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
   	]
 	},

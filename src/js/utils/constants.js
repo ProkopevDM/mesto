@@ -32,29 +32,36 @@ const photoFullscreenTitle = popupPhotoFullscreen.querySelector('.popup__photo-f
 const photoFullscreenCloseButton = popupPhotoFullscreen.querySelector('.popup__button-close');
 
 //Добавляем стандартные элементы
+import ekaterinburg from '../../images/photo-grid-Ekaterinburg.jpg';
+import kamenskUralsky from '../../images/photo-grid-Kamensk-Uralskiy.jpg';
+import villageNovyByt from '../../images/photo-grid-cat-traveler.jpg';
+import kamenskUralskyBridge from '../../images/photo-grid-bridge.jpg';
+import lake from '../../images/photo-grid-lake.jpg';
+import river from '../../images/photo-grid-river.jpg';
+
 const initialCards = [{
 		name: 'Екатеринбург',
-		link: './images/photo-grid-Ekaterinburg.jpg'
+		link: ekaterinburg
 	},
 	{
 		name: 'Каменск-Уральский',
-		link: './images/photo-grid-Kamensk-Uralskiy.jpg'
+		link: kamenskUralsky
 	},
 	{
 		name: 'Деревня Новый Быт',
-		link: './images/photo-grid-cat-traveler.jpg'
+		link: villageNovyByt
 	},
 	{
 		name: 'Каменск-Уральский',
-		link: './images/photo-grid-bridge.jpg'
+		link: kamenskUralskyBridge
 	},
 	{
 		name: 'Водохранилище',
-		link: './images/photo-grid-lake.jpg'
+		link: lake
 	},
 	{
 		name: 'Река',
-		link: './images/photo-grid-river.jpg'
+		link: river
 	}];
 
 const object = {
