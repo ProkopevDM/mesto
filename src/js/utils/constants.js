@@ -41,27 +41,33 @@ import river from '../../images/photo-grid-river.jpg';
 
 const initialCards = [{
 		name: 'Екатеринбург',
-		link: ekaterinburg
+		link: ekaterinburg,
+		isinitialCards: true
 	},
 	{
 		name: 'Каменск-Уральский',
-		link: kamenskUralsky
+		link: kamenskUralsky,
+		isinitialCards: true
 	},
 	{
 		name: 'Деревня Новый Быт',
-		link: villageNovyByt
+		link: villageNovyByt,
+		isinitialCards: true
 	},
 	{
 		name: 'Каменск-Уральский',
-		link: kamenskUralskyBridge
+		link: kamenskUralskyBridge,
+		isinitialCards: true
 	},
 	{
 		name: 'Водохранилище',
-		link: lake
+		link: lake,
+		isinitialCards: true
 	},
 	{
 		name: 'Река',
-		link: river
+		link: river,
+		isinitialCards: true
 	}];
 
 const object = {

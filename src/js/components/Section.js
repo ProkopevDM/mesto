@@ -15,7 +15,7 @@ export default class Section {
 		this._renderer(inputValues);
 	};
 
-	addItem(addElement) {
-		this._container.prepend(addElement);
+	addItem(addElement, item) {
+		item.isinitialCards? this._container.append(addElement):this._container.prepend(addElement);
 	};
 }

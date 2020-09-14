@@ -7,6 +7,8 @@ import {
 	inputName,
 	inputProfession,
 	popupAddElement,
+	openPopupPhotoFullscreen,
+	photoFullscreenTitle,
 	addFormElement,
 	popupPhotoFullscreen,
 	initialCards,
@@ -27,7 +29,7 @@ const editFormValidator = new FormValidator(object, popupEditProfile);
 addFormValidator.enableValidation();
 editFormValidator.enableValidation();
 
-const photoFullscreen = new PopupWithImage('.popup_type_photo-fullscreen');
+const photoFullscreen = new PopupWithImage('.popup_type_photo-fullscreen', openPopupPhotoFullscreen, photoFullscreenTitle);
 photoFullscreen.setEventListeners();
 
 function addCard(item) {
@@ -39,7 +41,7 @@ function addCard(item) {
 	}, '.element-template');
 
 	const addElement = card.generateCard();
-	cardItem.addItem(addElement);
+	cardItem.addItem(addElement, item);
 }
 
 const cardItem = new Section({

@@ -38,7 +38,8 @@ export default class Card {
 	};
 
 	_elementDelete() {
-		this._element.closest('.element').remove();
+		this._element.remove();
+		this._element = null;
 	};
 
 	_elementLike() {
