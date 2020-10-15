@@ -1,5 +1,6 @@
 //Определяем нужные элементы внутри класса profile
 const profile = document.querySelector('.profile');
+const changeAvatarButton = profile.querySelector('.profile__button-change-avatar');
 const editButton = profile.querySelector('.profile__button-edit');
 const profileName = profile.querySelector('.profile__name');
 const profession = profile.querySelector('.profile__profession');
@@ -9,7 +10,12 @@ const addButton = profile.querySelector('.profile__button-add');
 const elements = document.querySelector('.elements');
 const elementsTemplate = document.querySelector('.element-template').content;
 
-//Определяем нужные элементы для попапа редактировани профиля
+//Определяем нужные элементы для попапа редактирования аватара
+const popupEditAvatar = document.querySelector('.popup_type_edit-avatar');
+const avatarFormElement = popupEditAvatar.querySelector('.popup__form');
+const avatarChangeSubmit = popupEditAvatar.querySelector('.popup__form-button_type_save-avatar');
+
+//Определяем нужные элементы для попапа редактирования профиля
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const saveButton = popupEditProfile.querySelector('.popup__form-button_type_save');
 const editProfileCloseButton = popupEditProfile.querySelector('.popup__button-close');
@@ -31,6 +37,11 @@ const openPopupPhotoFullscreen = popupPhotoFullscreen.querySelector('.popup__pho
 const photoFullscreenTitle = popupPhotoFullscreen.querySelector('.popup__photo-fullscreen-title');
 const photoFullscreenCloseButton = popupPhotoFullscreen.querySelector('.popup__button-close');
 
+//Определяем нужные элементы для попапа удаления карточки
+const popupDeleteCard = document.querySelector('.popup_type_delete-card');
+const approveButton = popupDeleteCard.querySelector('.popup__form-button_type_approve');
+const popupDeleteCardCloseButton = popupDeleteCard.querySelector('.popup__button-close');
+
 //Добавляем стандартные элементы
 import ekaterinburg from '../../images/photo-grid-Ekaterinburg.jpg';
 import kamenskUralsky from '../../images/photo-grid-Kamensk-Uralskiy.jpg';
@@ -38,37 +49,6 @@ import villageNovyByt from '../../images/photo-grid-cat-traveler.jpg';
 import kamenskUralskyBridge from '../../images/photo-grid-bridge.jpg';
 import lake from '../../images/photo-grid-lake.jpg';
 import river from '../../images/photo-grid-river.jpg';
-
-const initialCards = [{
-		name: 'Екатеринбург',
-		link: ekaterinburg,
-		isinitialCards: true
-	},
-	{
-		name: 'Каменск-Уральский',
-		link: kamenskUralsky,
-		isinitialCards: true
-	},
-	{
-		name: 'Деревня Новый Быт',
-		link: villageNovyByt,
-		isinitialCards: true
-	},
-	{
-		name: 'Каменск-Уральский',
-		link: kamenskUralskyBridge,
-		isinitialCards: true
-	},
-	{
-		name: 'Водохранилище',
-		link: lake,
-		isinitialCards: true
-	},
-	{
-		name: 'Река',
-		link: river,
-		isinitialCards: true
-	}];
 
 const object = {
 	formSelector: '.popup__form',
@@ -80,9 +60,13 @@ const object = {
 };
 
 export {
+	changeAvatarButton,
 	editButton,
 	addButton,
 	elements,
+	popupEditAvatar,
+	avatarFormElement,
+	avatarChangeSubmit,
 	popupEditProfile,
 	inputName,
 	inputProfession,
@@ -91,8 +75,9 @@ export {
 	openPopupPhotoFullscreen,
 	photoFullscreenTitle,
 	popupPhotoFullscreen,
-	initialCards,
 	object,
 	createButton,
-	saveButton
+	saveButton,
+	popupDeleteCard,
+	approveButton
 }

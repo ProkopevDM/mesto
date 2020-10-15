@@ -7,13 +7,15 @@
 /*Импорты блока profile*/
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
+@import url(../blocks/profile/__button-change-avatar/profile__button-change-avatar.css);
 @import url(../blocks/profile/__wrapper/profile__wrapper.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__profession/profile__profession.css);
 @import url(../blocks/profile/__button-edit/profile__button-edit.css);
 @import url(../blocks/profile/__button-add/profile__button-add.css);
-/*Импорты блока profile*/
+/*Импорты блока elements*/
 @import url(../blocks/elements/elements.css);
 /*Импорты блока element*/
 @import url(../blocks/element/element.css);
@@ -22,7 +24,9 @@
 @import url(../blocks/element/__info/element__info.css);
 @import url(../blocks/element/__place/element__place.css);
 @import url(../blocks/element/__button-like/element__button-like.css);
+@import url(../blocks/element/__like/element__like.css);
 @import url(../blocks/element/__button-like/_active/element__button-like_active.css);
+@import url(../blocks/element/__liked/element__liked.css);
 /*Импорты блока footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
