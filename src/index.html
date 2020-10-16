@@ -53,8 +53,8 @@
 			<form name="editAvatarForm" action="#" class="popup__form" novalidate>
 				<button type="button" class="popup__button-close"></button>
 				<h2 class="popup__title">Обновить автар</h2>
-				<input name="avatar" type="URL" id="url-input" class="popup__input popup__input_type_url" placeholder="Ссылка на картинку" required autocomplete="off">
-				<span id="url-input-error" class="url-input-error"></span>
+				<input name="avatar" type="URL" id="url-input_avatar" class="popup__input popup__input_type_url" placeholder="Ссылка на картинку" required autocomplete="off">
+				<span id="url-input_avatar-error" class="url-input-error"></span>
 				<button type="submit" class="popup__form-button popup__form-button_type_save-avatar">Сохранить</button>
 			</form>
 		</div>
@@ -98,11 +98,11 @@
 <!-- 	popup увеличения фото -->
 	<div class="popup popup_type_delete-card">
 		<div class="popup__container">
-
+			<form name="deleteCard" action="#" class="popup__form" novalidate>
 				<button type="button" class="popup__button-close"></button>
-				<h2 class="popup__title">Вы уверены?</h2>
-				<button type="submit" class="popup__form-button popup__form-button_type_approve">да</button>
-
+				<h2 class="popup__title popup__title_type_approve">Вы уверены?</h2>
+				<button type="submit" class="popup__form-button popup__form-button_type_approve">Да</button>
+			</form>
 		</div>
 	</div>
 	<!-- Конец блока popup -->

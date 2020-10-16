@@ -19,10 +19,6 @@ export default class Api {
 		]);
 	}
 
-
-
-
-
 /*Запрос на получение карточек с сервера*/
 	getCardsFromServer() {
 		return fetch(`${this._baseUrl}/cards`, {
@@ -42,13 +38,13 @@ export default class Api {
 		.then((res) => this._getStateServer(res));
 	};
 
-// 	deleteCard(cardId) {
-// 		return fetch(`${this._baseUrl}/cards/${cardId}`, {
-// 			headers: this._headers,
-// 			method: 'DELETE',
-// 		})
-// 		.then((res) => this._getStateServer(res));
-// 	};
+	deleteCard(cardId) {
+		return fetch(`${this._baseUrl}/cards/${cardId}`, {
+			headers: this._headers,
+			method: 'DELETE',
+		})
+		.then((res) => this._getStateServer(res));
+	};
 
 /*Запрос на получение информации о пользователе*/
 	getUserInfo() {
@@ -78,19 +74,19 @@ export default class Api {
 		.then((res) => this._getStateServer(res));
 	};
 
-// 	likeCard(cardId) {
-// 		return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-// 			headers: this._headers,
-// 			method: 'PUT',
-// 		})
-// 		.then((res) => this._getStateServer(res));
-// 	};
+	likeCard(cardId) {
+		return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+			headers: this._headers,
+			method: 'PUT',
+		})
+		.then((res) => this._getStateServer(res));
+	};
 
-// 	dislikeCard(cardId) {
-// 		return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-// 			headers: this._headers,
-// 			method: 'DELETE',
-// 		})
-// 		.then((res) => this._getStateServer(res));
-// 	};
+	dislikeCard(cardId) {
+		return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+			headers: this._headers,
+			method: 'DELETE',
+		})
+		.then((res) => this._getStateServer(res));
+	};
 }
