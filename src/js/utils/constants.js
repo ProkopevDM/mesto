@@ -42,14 +42,6 @@ const popupDeleteCard = document.querySelector('.popup_type_delete-card');
 const approveButton = popupDeleteCard.querySelector('.popup__form-button_type_approve');
 const popupDeleteCardCloseButton = popupDeleteCard.querySelector('.popup__button-close');
 
-//Добавляем стандартные элементы
-import ekaterinburg from '../../images/photo-grid-Ekaterinburg.jpg';
-import kamenskUralsky from '../../images/photo-grid-Kamensk-Uralskiy.jpg';
-import villageNovyByt from '../../images/photo-grid-cat-traveler.jpg';
-import kamenskUralskyBridge from '../../images/photo-grid-bridge.jpg';
-import lake from '../../images/photo-grid-lake.jpg';
-import river from '../../images/photo-grid-river.jpg';
-
 const object = {
 	formSelector: '.popup__form',
 	inputSelector: '.popup__input',
@@ -74,10 +66,7 @@ export {
 	addFormElement,
 	openPopupPhotoFullscreen,
 	photoFullscreenTitle,
-	popupPhotoFullscreen,
 	object,
 	createButton,
-	saveButton,
-	popupDeleteCard,
-	approveButton
+	saveButton
 }
