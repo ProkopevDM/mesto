@@ -1,4 +1,4 @@
-# [Mesto Russia](https://millioneri.github.io/mesto/index.html) 
+# [Mesto Russia](https://millioneri.github.io/mesto/) 
 ------ 
 __Mesto Russia__ - Проектная работа для студентов [Яндекс.Практикум](https://praktikum.yandex.ru/) рассчитанная для проверки знаний на пройденые темы третьего курса.
 ------ 
